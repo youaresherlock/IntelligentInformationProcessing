@@ -1,0 +1,2 @@
+# IntelligentInformationProcessing
+学习智能信息算法代码以及笔记和课件
