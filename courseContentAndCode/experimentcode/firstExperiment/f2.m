@@ -1,4 +1,4 @@
-funcion y = f2(x1, x2)
+function y = f2(x1, x2)
 % 测试函数为二元函数 x1∈ [-3.0, 12.1], x2 ∈ [4.1, 5.8]
 y = 21.5 + x1 * sin(4 * pi * x1) + x2 * sin(20 * pi * x2);
 
