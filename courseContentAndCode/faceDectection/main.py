@@ -8,6 +8,27 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
+
+def show_people(flag = False):
+    if flag:
+        string = 'orl_faces\\s'
+        rootPath = os.listdir('orl_faces')
+        imgs = []
+        # 7 * 6
+        fileLen = len(rootPath)
+        for i in range(1, fileLen):
+            filepath = os.path.join(string + str(i), '1.pgm')
+            imgs.append(mpimg.imread(filepath))
+        plt.figure()
+        count = 0
+        for i in  range(1, 8):
+            for j in range(1, 7):
+                plt.subplot(6, 7, count + 1)
+                plt.imshow(imgs[count])
+                if count < 39:
+                    count += 1
+        plt.show()
+
 class Hog_descriptor():
     def __init__(self, img, cell_size=16, bin_size=8):
         self.img = img
@@ -228,6 +249,8 @@ def kNNClassify(inX, dataSet, labels, k = 3):
     return label
 
 def main(k):
+
+    show_people(flag = True)
     # generate the trainingSet and the testingSet
     if not os.path.exists('testingSet') and not os.path.exists("trainingSet"):
         prompt = "Please input the proportion(0~1): "
@@ -275,7 +298,8 @@ def selectK():
     plt.show()
 
 if __name__ == "__main__":
-   main(4)
+   main(4) # 结果96.5%左右
+
 
 # bmpToJpg('orl_faces\\s1')
 # print(img2vector('orl_faces\s1\\1.jpg').shape)
