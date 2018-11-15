@@ -29,6 +29,7 @@ def show_people(flag = False):
                     count += 1
         plt.show()
 
+# 这个类是我拷贝别人的特征提取的类，其他程序都是我写的 可是用此类分类能力太差，请忽略待改进
 class Hog_descriptor():
     def __init__(self, img, cell_size=16, bin_size=8):
         self.img = img
